@@ -1,4 +1,5 @@
 from pip._vendor.distlib.compat import raw_input
+import sys
 
 
 def check_mapping(str1, str2):
@@ -23,6 +24,9 @@ def check_mapping(str1, str2):
 
 
 if __name__ == '__main__':
-    str1 = raw_input("Enter first string:")
-    str2 = raw_input("Enter Second String:")
-    print(check_mapping(str1, str2))
+    if len(sys.argv) == 3:
+        str1 = sys.argv[1]
+        str2 = sys.argv[2]
+        print(check_mapping(str1, str2))
+    else:
+        print("Program requires Only 2 input parameters to execute")
